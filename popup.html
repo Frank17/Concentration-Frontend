@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Popup Page</title>
+    <meta charset="utf-8">
+
+    <link href="./bootstrap-5.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap-5.3.1-dist/js/bootstrap.min.js" rel="stylesheet">
+
+    <!-- Roboto font -->
+    <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Open Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h5 id="title" class="mt-2 mb-1 text-center">Concentration</h5>
+        <!-- 
+        <div id="btnSection" class="container text-center btn-group-vertical">
+            <button id="loginBtn" type="button" class="btn btn-outline-primary btn-sm">
+                <span class="fw-bold">Log In</span>
+            </button>
+
+            <button id="signupBtn" type="button" class="btn btn-outline-success btn-sm">
+                <span class="fw-bold">Sign Up</span>
+            </button>
+
+            <button id="logoutBtn" type="button" class="btn btn-outline-warning btn-sm">
+                <span class="fw-bold">Log Out</span>
+            </button>
+        </div> -->
+
+        <!-- Available Modes -->
+        <hr class="border-top border-5 border-primary mt-0 mb-2">
+
+        <div class="container mb-2">
+            <div class="row gx-3">
+                <div class="col">
+                    <div class="card orange-grad text-center text-white">
+                        <label id="strict-mode">
+                            <input type="radio" name="test" value="small" checked>
+                            <span class="card-title"> Strict <br> Mode </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card green-grad text-center text-white">
+                        <label id="gpt-mode">
+                            <input type="radio" name="test" value="small" checked>
+                            <span class="card-title"> GPT <br> Mode </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Interaction -->
+        <div class="text-center px-2">
+            <input class="form-control-sm border rounded-3" id="blistInput" type="text" placeholder="Enter keyword:">
+
+            <div class="btn-toolbar justify-content-evenly mt-2">
+                <button id="blistSubmit" type="button" class="btn btn-sm btn-success">
+                    Submit
+                </button>
+
+                <button id="blistRemoveAll" type="button" class="btn btn-sm btn-danger ml-3">
+                    Remove All
+                </button>
+            </div>
+        </div>
+
+        <hr class="border-top border-5 border-success mt-2 mb-1">
+
+        <div>
+            <span class="instrFont ps-2">
+                Blocked keywords:
+            </span>
+            <ol id="blist"></ol>
+        </div>
+    </div>
+
+    <!-- GPT monthly limit reached popup reminder -->
+    <div class="modal fade" id="gptModal" tabindex="-1" aria-labelledby="gptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="gptModalLabel">GPT Monthly Limit Reached</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Please try GPT mode again next month!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+</body>
+
+</html>
