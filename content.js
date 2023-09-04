@@ -6,7 +6,7 @@ let divisions = document.getElementsByTagName('div');
 for (div of divisions) {
     textArr.push(div.innerText);
 }
-const textStr = textArr.join(' ').replaceAll('\n', ' ');
+const TEXT_STR = textArr.join(' ').replaceAll('\n', ' ');
 const HTTP = new XMLHttpRequest();
 const API_URL = 'https://concentration-server.herokuapp.com/api/summary';
 
@@ -25,7 +25,7 @@ function checkSubject() {
         if (!limitReached) {
             HTTP.open('POST', API_URL, true);
             let data = new FormData();
-            data.append('text', textStr);
+            data.append('text', TEXT_STR);
             data.append('subjects', JSON.stringify(obj.blist));
             data.append('url', window.location.href);
             data.append('mode', obj.mode);
