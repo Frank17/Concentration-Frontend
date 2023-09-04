@@ -8,9 +8,9 @@ for (div of divisions) {
 }
 const textStr = textArr.join(' ').replaceAll('\n', ' ');
 const HTTP = new XMLHttpRequest();
+const API_URL = 'https://concentration-server.herokuapp.com/api/summary';
 
 function checkSubject() {
-    const API_URL = 'https://concentration-server.herokuapp.com/api/summary';
     chrome.storage.sync.get({
         'blist': [], 'mode': 'strict',
         'limitReached': false, 'reachedDate': 0
