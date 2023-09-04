@@ -1,0 +1,14 @@
+{
+    "default": {
+        "user_info": {
+            "user": "odk",
+            "password": "odk",
+            "serviceAccount": "no-reply@${DOMAIN}",
+            "database": "odk"
+        },
+        "email": {
+            "serviceAccount": "no-reply@${DOMAIN}"
+        },
+        "block_list": []
+    }
+}
